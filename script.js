@@ -1,21 +1,21 @@
-function appendResult(value) {
-    document.getElementById('result').value += value;
+const resultInput = document.getElementById('result');
+
+function appendCharacter(char) {
+    resultInput.value += char;
 }
 
-function clearResult() {
-    document.getElementById('result').value = '';
+function clearDisplay() {
+    resultInput.value = '';
 }
 
 function deleteLast() {
-    let result = document.getElementById('result').value;
-    document.getElementById('result').value = result.slice(0, -1);
+    resultInput.value = resultInput.value.slice(0, -1);
 }
 
 function calculateResult() {
-    let result = document.getElementById('result').value;
     try {
-        document.getElementById('result').value = eval(result);
+        resultInput.value = eval(resultInput.value);
     } catch (error) {
-        document.getElementById('result').value = 'Error';
+        resultInput.value = 'Error';
     }
 }
